@@ -1,0 +1,13 @@
+FileVersion = 1
+
+[Project]
+Name = "libexpat-beef"
+TargetType = "BeefLib"
+StartupObject = "libexpat_beef.Program"
+
+[Configs.Debug.Win64]
+CLibType = "DynamicDebug"
+LibPaths = ["$(ProjectDir)\\libs\\debug\\libexpatd.lib"]
+
+[Configs.Release.Win64]
+LibPaths = ["$(ProjectDir)\\libs\\release\\libexpatd.lib"]

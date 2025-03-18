@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <board_height> 6 </board_height>
+    <board_width> 7 </board_width>
+    <maximum_highscores> 8 </maximum_highscores>    
+</Configuration>
