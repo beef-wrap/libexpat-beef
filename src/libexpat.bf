@@ -83,7 +83,7 @@ public static class libexpat
 	// #define XML_TRUE ((XML_Bool)1)
 	// #define XML_FALSE ((XML_Bool)0)
 
-	/* The XML_Status enum gives the possible return values for several
+	/* The XML_Status gives the possible return values for several
 	API functions.  The preprocessor #defines are included so this
 	stanza can be added to code that still needs to support older
 	versions of Expat 1.95.x:
@@ -96,14 +96,14 @@ public static class libexpat
 	Otherwise, the #define hackery is quite ugly and would have been
 	dropped.
 	*/
-	public enum XML_Status
+	public enum XML_Status : c_int
 	{
 		XML_STATUS_ERROR = 0,
 		XML_STATUS_OK = 1,
 		XML_STATUS_SUSPENDED = 2
 	}
 
-	public enum XML_Error
+	public enum XML_Error : c_int
 	{
 		XML_ERROR_NONE,
 		XML_ERROR_NO_MEMORY,
@@ -159,7 +159,7 @@ public static class libexpat
 		XML_ERROR_NOT_STARTED,
 	}
 
-	public enum XML_Content_Type
+	public enum XML_Content_Type : c_int
 	{
 		XML_CTYPE_EMPTY = 1,
 		XML_CTYPE_ANY,
@@ -169,7 +169,7 @@ public static class libexpat
 		XML_CTYPE_SEQ
 	}
 
-	public enum XML_Content_Quant
+	public enum XML_Content_Quant : c_int
 	{
 		XML_CQUANT_NONE,
 		XML_CQUANT_OPT,
@@ -765,7 +765,7 @@ public static class libexpat
 	*/
 	[CLink] public static extern XML_Status XML_ResumeParser(XML_Parser parser);
 
-	enum XML_Parsing
+	public enum XML_Parsing : c_int
 	{
 		XML_INITIALIZED,
 		XML_PARSING,
@@ -805,7 +805,7 @@ public static class libexpat
 	*/
 	[CLink] public static extern XML_Parser XML_ExternalEntityParserCreate(XML_Parser parser, XML_Char* context, XML_Char* encoding);
 
-	enum XML_ParamEntityParsing
+	public enum XML_ParamEntityParsing : c_int
 	{
 		XML_PARAM_ENTITY_PARSING_NEVER,
 		XML_PARAM_ENTITY_PARSING_UNLESS_STANDALONE,
@@ -930,7 +930,7 @@ public static class libexpat
 	[CLink] public static extern XML_Expat_Version XML_ExpatVersionInfo(void);
 
 		/* Added in Expat 1.95.5. */
-	public enum XML_FeatureEnum
+	public enum XML_FeatureEnum : c_int
 	{
 		XML_FEATURE_END = 0,
 		XML_FEATURE_UNICODE,
